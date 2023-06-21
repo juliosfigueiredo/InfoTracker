@@ -7,10 +7,10 @@ services:
       - "80:80"
       - "443:443"
     networks:
-      - proxynet
+      - some-net
     build:
       context: .
       dockerfile: Api/Dockerfile
 networks:
-  proxynet:
-    name: bridge
+  some-net:
+    driver: bridge
