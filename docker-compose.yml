@@ -3,6 +3,14 @@ version: '3.4'
 services:
   api:
     image: ${DOCKER_REGISTRY-}api
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - proxynet
     build:
       context: .
       dockerfile: Api/Dockerfile
+networks:
+  proxynet:
+    name: bridge
