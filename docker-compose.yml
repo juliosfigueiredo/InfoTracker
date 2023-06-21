@@ -4,8 +4,8 @@ services:
   api:
     image: ${DOCKER_REGISTRY-}api
     ports:
-      - "28801:80"
-      - "28802:443"
+      - "80:80"
+      - "443:443"
     networks:
       - some-net
     build:
